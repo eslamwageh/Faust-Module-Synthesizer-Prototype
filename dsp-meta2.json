@@ -1,0 +1,152 @@
+{
+    "name": "filter",
+    "filename": "filter",
+    "version": "2.78.3",
+    "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2",
+    "library_list": [
+        "/usr/share/faust/stdfaust.lib",
+        "/usr/share/faust/filters.lib",
+        "/usr/share/faust/maths.lib",
+        "/usr/share/faust/platform.lib"
+    ],
+    "include_pathnames": [
+        "/share/faust",
+        "/usr/local/share/faust",
+        "/usr/share/faust",
+        "."
+    ],
+    "size": 32,
+    "code": "EJ/L",
+    "inputs": 1,
+    "outputs": 1,
+    "meta": [
+        {
+            "compile_options": "-lang wasm-i -ct 1 -es 1 -mcd 16 -mdd 1024 -mdy 33 -single -ftz 2"
+        },
+        {
+            "filename": "filter"
+        },
+        {
+            "filters.lib/fir:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/fir:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/fir:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/iir:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/iir:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/iir:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/name": "Faust Filters Library"
+        },
+        {
+            "filters.lib/resonlp:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/resonlp:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/resonlp:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/tf2:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/tf2:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/tf2:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/tf2s:author": "Julius O. Smith III"
+        },
+        {
+            "filters.lib/tf2s:copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>"
+        },
+        {
+            "filters.lib/tf2s:license": "MIT-style STK-4.3 license"
+        },
+        {
+            "filters.lib/version": "1.6.0"
+        },
+        {
+            "maths.lib/author": "GRAME"
+        },
+        {
+            "maths.lib/copyright": "GRAME"
+        },
+        {
+            "maths.lib/license": "LGPL with exception"
+        },
+        {
+            "maths.lib/name": "Faust Math Library"
+        },
+        {
+            "maths.lib/version": "2.8.1"
+        },
+        {
+            "name": "filter"
+        },
+        {
+            "platform.lib/name": "Generic Platform Library"
+        },
+        {
+            "platform.lib/version": "1.3.0"
+        }
+    ],
+    "ui": [
+        {
+            "type": "vgroup",
+            "label": "filter",
+            "items": [
+                {
+                    "type": "hslider",
+                    "label": "cutoffFrequency",
+                    "varname": "fHslider2",
+                    "shortname": "cutoffFrequency",
+                    "address": "/filter/cutoffFrequency",
+                    "index": 16,
+                    "init": 171,
+                    "min": 50,
+                    "max": 10000,
+                    "step": 0.01
+                },
+                {
+                    "type": "hslider",
+                    "label": "gain",
+                    "varname": "fHslider0",
+                    "shortname": "gain",
+                    "address": "/filter/gain",
+                    "index": 0,
+                    "init": 1,
+                    "min": 0,
+                    "max": 1,
+                    "step": 0.01
+                },
+                {
+                    "type": "hslider",
+                    "label": "q",
+                    "varname": "fHslider1",
+                    "shortname": "q",
+                    "address": "/filter/q",
+                    "index": 4,
+                    "init": 5,
+                    "min": 1,
+                    "max": 30,
+                    "step": 0.1
+                }
+            ]
+        }
+    ]
+}

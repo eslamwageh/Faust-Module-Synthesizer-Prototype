@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="manifest" href="./manifest.json" />
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faust DSP</title>
+    <style>
+      body {
+        color: #b0b0b0;
+        /* background-color: #1f1f1f; */
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        position: absolute;
+        user-select: none;
+      }
+
+      main {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+      }
+
+      main span {
+        position: relative;
+        display: flex;
+      }
+
+      main span[hidden] {
+        display: none;
+      }
+
+      main span span {
+        margin: 0px 10px;
+        flex: 1;
+      }
+
+      main span select {
+        flex: 2;
+      }
+
+      #dsp-switch {
+        margin: 20px auto;
+      }
+
+      #button-dsp {
+        padding: 10px;
+      }
+      .container {
+        display: flex;
+        width: 100vw;
+      }
+
+      #div-faust-ui,
+      #div-faust-ui2 {
+        display: flex;
+        flex-direction: column;
+      }
+      .flex {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .connection-line {
+        position: absolute;
+        width: 10px;
+        background-color: #000;
+        transform-origin: top left;
+      }
+
+      .module {
+        border: 2px solid black;
+        box-sizing: border-box;
+        display: flex;
+        margin: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        gap: 0;
+        align-items: center;
+      }
+      .node {
+        width: 20px;
+        height: 20px;
+        background-color: lightblue;
+        border: 2px solid blue;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+      }
+      .node-input {
+        left: -10px;
+      }
+      .node-output {
+        right: -10px;
+      }
+      svg {
+        z-index: 999; /* Send it to the background */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      line {
+        stroke: black;
+        stroke-width: 2;
+        pointer-events: all; /* Allow clicking on the line */
+      }
+    </style>
+    <link rel="stylesheet" href="./faust-ui/index.css" />
+  </head>
+
+  <body>
+    <main>
+      <div></div>
+      <!-- <button id="toggleButton">Toggle Connection</button> -->
+
+      <div class="container">
+        <div class="module" id="module0" style="top: 50px; left: 50px">
+          <div id="div-faust-ui0"></div>
+          <div class="node node-output" id="node0-0output"></div>
+        </div>
+
+        <div class="module" id="module1" style="top: 50px; left: 50px">
+          <div style="display: flex; flex-direction: column; gap: 50px">
+            <div class="node node-input" id="node1-0input"></div>
+            <div class="node node-input" id="node1-1input"></div>
+          </div>
+          <div id="div-faust-ui"></div>
+          <div style="display: flex; flex-direction: column; gap: 50px">
+            <div class="flex">
+              sine
+              <div class="node node-output" id="node1-0output"></div>
+            </div>
+
+            <div class="flex">
+              Triangle
+              <div class="node node-output" id="node1-1output"></div>
+            </div>
+            <div class="flex">
+              sawtooth
+              <div class="node node-output" id="node1-2output"></div>
+            </div>
+            <div class="flex">
+              square
+              <div class="node node-output" id="node1-3output"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="module" id="module2" style="top: 50px; left: 50px">
+          <div class="node node-input" id="node2-0input"></div>
+
+          <div id="div-faust-ui2"></div>
+        </div>
+      </div>
+
+      <svg id="svgCanvas"></svg>
+    </main>
+    <script src="./index.js"></script>
+    <script></script>
+  </body>
+</html>
