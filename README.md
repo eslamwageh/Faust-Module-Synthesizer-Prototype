@@ -19,5 +19,5 @@ This is a small prototype designed to practice **FaustNode** connections, **Web 
 - Some parts of the connection logic are **hard-coded** (e.g., if conditions).
 - This is intended purely for practice and exploration.
 
-Check out the **demo video**: [🔗 Video Demo](https://drive.google.com/file/d/1cXmoazf1tweEd-iXd1A6b6icdnGuS5Ef/view?usp=drive_link)
+Check out the **demo video**: [🔗 Video Demo (lower the sound of your speaker)](https://drive.google.com/file/d/1cXmoazf1tweEd-iXd1A6b6icdnGuS5Ef/view?usp=drive_link)
 
